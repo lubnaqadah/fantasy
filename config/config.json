@@ -1,24 +1,16 @@
+match          = process.env.DATABASE_URL.match(validPg);
+var dbName     = match[5];
+var dbUser     = match[1];
+var dbPassword = match[2];
+var dbPort     = match[4];
+var dbHost     = match[3];
 
-{
-  "development": {
-    "username": "null",
-    "password": "null",
-    "database": "fantasyTeam",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "null",
-    "password": "null",
-    "database": "fantasyTeam",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "null",
-    "password": "null",
-    "database": "DATABASE_URL",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
+sequelize = new Sequelize(dbName, dbUser, dbPassword, {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  port: dbPort,
+  host: dbHost,
+  logging: false,
+  dialectOptions: {
+    ssl: true 
+});
