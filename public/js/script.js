@@ -15,6 +15,13 @@ $(".btnLogin").on("click", function(){
 })
 
 
+$(".btnsignup").on("click", function(){
+	UserName = $(".name").val();
+	localStorage.setItem('UserName', UserName);
+	window.location.href= "/dashboard.html"
+})
+
+
 $.get("/api/players", function(data){
 
 	for (var i =0; i< data.length; i++){		
@@ -25,10 +32,11 @@ $.get("/api/players", function(data){
 
 
 function dashboard(){
-	UserName = localStorage.getItem('UserName');
-	console.log(UserName);
-	getUserInfo(UserName);
-
+	setTimeout(function(){
+		UserName = localStorage.getItem('UserName').trim();
+		console.log(UserName.trim());
+		getUserInfo(UserName);
+	}, 200);
 
 };
 
@@ -51,7 +59,7 @@ $(document).on("click", ".buy", function(){
 	}
 	//	console.log(team, customTeam);
 });
- 
+
 
 $(document).on("click", ".delete", function(){
 	var parent = $(this).parent();

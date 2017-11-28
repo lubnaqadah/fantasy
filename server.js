@@ -25,12 +25,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(methodOverride("_method"));
 
-
-// View Engine
-//app.set('views', path.join(__dirname, 'views'));
-//app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-//app.set("view engine", "handlebars");
-
 app.use(express.static("public"));
 
 require("./routes/html-routes.js")(app);

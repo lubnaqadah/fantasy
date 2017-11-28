@@ -27,13 +27,9 @@ module.exports = function(app) {
 
 		// login route loads login.html
 		app.get("/login", function(req, res) {
-			res.sendFile(path.join(__dirname, "../login.html"));
+			res.sendFile(path.join(__dirname, "../dashboaed.html"));
 		});
 
-		// register route loads register.html
-		app.get("/register", function(req, res) {
-			res.sendFile(path.join(__dirname, "../register.html"));
-		});
 
 		// dashboard route loads dashboard.html
 		app.get("/dashboard", function(req, res) {

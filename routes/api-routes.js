@@ -47,7 +47,7 @@ module.exports = function(app) {
 
 		});
 
-		res.redirect("/login");
+		res.redirect("/dashboard.html");
 
 	});
 
