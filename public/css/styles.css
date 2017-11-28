@@ -1,0 +1,215 @@
+/* Space out content a bit */
+body {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+	margin-bottom: 1.5rem;
+	border-bottom: .05rem solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 3rem;
+}
+ul{
+	width: auto;
+	float: right;
+	margin-bottom: 10px;
+}
+
+ul li{
+	padding-right: 8px;
+}
+
+/* Custom page footer */
+.footer {
+	padding-top: 1.5rem;
+	color: #777;
+	border-top: .05rem solid #e5e5e5;
+}
+
+.card{
+	display: block;
+	background-color: #edeade
+}
+.card-header{
+	color: #fefbfd;
+	background-color: #b60040
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+	.container {
+		max-width: 70rem;
+	}
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+	/* Remove the padding we set earlier */
+	.header,
+	.footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+
+}
+
+
+.home{
+	background-image: url(/images/DB_PL_Preview_01.jpg);
+	background-size: cover;
+	color: #eaf205!important;
+}
+.signIn {
+	color: #333;
+	text-shadow: none; /* Prevent inheritance from `body` */
+	background-color: #fff;
+	border: .05rem solid #fff;
+}
+
+.player{
+	border: 1px solid #000;
+	width: 30%;
+	height: 180px;
+	float: left;
+	margin: 5px;
+
+}
+
+.player img{
+	max-width: 45%;
+	float: left;
+	height: 70%;
+	padding-top: 5px;
+
+}
+
+.team, .players {
+	background-color: #DDDED9;
+	border: 5px solid #edeade;
+	float: left;
+	border-radius: 10px;
+	padding:1%;
+	max-height: 700px;
+	overflow: auto;
+
+}
+.user, .game .team{
+	background-color: #DDDED9;
+	border: 5px solid #edeade;
+	float: left;
+	border-radius: 10px;
+	padding:1%;
+	max-height: none;
+	overflow: none;
+}
+
+.team div, .user div{
+	width: 90%;
+	margin: 5px auto;
+	display: inline-block;
+	text-align: center
+}
+
+.team img, .user img{
+	max-width: 45%;
+	float: left;
+	max-height: 95%;
+	padding-top: 5px;
+
+}
+
+#latestScore{
+	border: 1px solid #0a304e;
+	border-radius: 50%;
+	padding: 5px;
+	margin-left: 10px;
+	background-color:#340936;
+	color: #edeade;
+}
+#myModal .modal{
+	text-align: center;
+	font-weight: 800
+		background-color: #373d4a
+}
+#myModal .modal-header{
+	background-color: #340936;
+	color: #edeade;
+}
+#myModal .modal-body,#myModal .modal-footer{
+	color: #edeade;
+	background-color: #b60040;
+	font-weight: 600
+}
+.trophy{
+	width: 60px;
+	height: auto
+}
+.modal-backdrop {
+	background-color: #ceced0;
+}
+
+.text-muted{
+	margin-top: 10%;
+	font-size: 3.5em;
+	color: #B2B804!important;
+	font-weight: 600
+}
+
+.intro{
+	margin-top: 10%
+}
+a { color: inherit; } 
+a:hover { 
+	color: inherit;
+	text-decoration: none
+} 
+.modal-content{
+	background-color: #340936;
+}
+
+#signupModal ,#signinModal{
+	margin-top: 15%
+}
+
+.dashboard, .game{
+	background-image: url(/images/bg.jpg);
+	background-size: cover;
+	color: #340936!important;
+
+}
+
+.dashboard .container, .game .container{
+	background-color: #edeade;
+	border-radius: 10px; 
+}
+.dashboard .text-muted{
+	color:#340936!important;
+}
+.save, .start, .play, .leader{
+	color: #edeade;
+	background-color: #340936;
+	border: 1px solid #340936;
+	margin: 5px;
+	margin-top: 10px;
+	border-radius: 5px; 
+	padding: 10px;
+
+}
