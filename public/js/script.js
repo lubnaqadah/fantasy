@@ -36,7 +36,7 @@ function dashboard(){
 		UserName = localStorage.getItem('UserName').trim();
 		console.log(UserName.trim());
 		getUserInfo(UserName);
-	}, 200);
+	}, 800);
 
 };
 
