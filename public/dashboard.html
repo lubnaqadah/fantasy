@@ -5,7 +5,7 @@
 		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	</head>
-	<body class="dashboard">
+	<body class="dashboard" onload="dashboard()">
 		<div class="container">
 
 			<div class="col-lg-12">
@@ -17,7 +17,7 @@
 						<h6>Points: <span id="score"></span></h6>
 						<ul class="nav nav-pills">
 							<li role="presentation"><a href="/index.html">Home</a></li>
-							<li role="presentation"><a href="/users/logout">Logout</a></li>
+							<li role="presentation"><a href="/index.html">Logout</a></li>
 
 						</ul>
 					</nav>
@@ -31,10 +31,6 @@
 						<h6>Available Players</h6>
 					</div>
 
-
-					<lable>look up your team</lable>
-					<input name="name" class="name">
-					<button class="search">search</button>
 					<button class="save">Save Changes</button>
 
 					<button class="play">Play</button>

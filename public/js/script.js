@@ -3,25 +3,16 @@ var UserName, score, latestScore,player,userTeam, customTeam,avatar, teamName, n
 
 $(".login").on("click", function(){
 	$("#signinModal").modal('toggle');
+
 })
 $(".signup").on("click", function(){
 	$("#signupModal").modal('toggle');
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$(".btnLogin").on("click", function(){
+	UserName = $(".name").val();
+	localStorage.setItem('UserName', UserName);
+})
 
 
 $.get("/api/players", function(data){
@@ -33,12 +24,13 @@ $.get("/api/players", function(data){
 });
 
 
-$(".search").on("click", function(){
-	UserName = $(".name").val();
+function dashboard(){
+	UserName = localStorage.getItem('UserName');
+	console.log(UserName);
 	getUserInfo(UserName);
 
 
-});
+};
 
 $(document).on("click", ".buy", function(){
 	var parent = $(this).parent();
@@ -59,7 +51,7 @@ $(document).on("click", ".buy", function(){
 	}
 	//	console.log(team, customTeam);
 });
-
+ 
 
 $(document).on("click", ".delete", function(){
 	var parent = $(this).parent();
@@ -78,7 +70,7 @@ function buy(div){
 
 
 function remove(div){
-	div.find("button").text("Buy").removeClass("delete").addClass("buy");
+	div.find("button").text("Add").removeClass("delete").addClass("buy");
 	div.appendTo($(".players"));
 	var playerID = div.attr("playerID");
 
@@ -151,7 +143,7 @@ function createNewPlayer(data){
 	player.append(playerClub);
 	player.append(playerPossition);
 	player.append(playerValue);
-	player.append($("<button class='buy btn btn-success btn-sm'>" + "Buy" + "</button>"));
+	player.append($("<button class='buy btn btn-success btn-sm'>" + "Add" + "</button>"));
 	player.append($("<span id='latestScore'>" + data.current_score + "</span>"));
 
 };
@@ -195,7 +187,7 @@ function getUserInfo(UserName){
 //==================
 
 function game(){
-	var name = "lubna";
+	var name = localStorage.getItem('UserName');
 	var playersDB = 0;
 
 	getUserInfo(name, "team");
@@ -227,7 +219,7 @@ function game(){
 		async: "false",
 		url: "/api/users",
 		data: {
-			name : "lubna",
+			name : name,
 		}
 	}).done(function(data){
 		for (var x = 0; x< data.length; x++) {
@@ -264,7 +256,7 @@ function game(){
 			.done(function(data){
 			setTimeout(function(){
 				window.location.reload();
-			},1000); 
+			},1200); 
 		})
 
 	});

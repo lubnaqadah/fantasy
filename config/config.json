@@ -1,8 +1,8 @@
 
 {
   "development": {
-    "username": "null",
-    "password": "null",
+    "username": "root",
+    "password": "9248",
     "database": "fantasyTeam",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -10,7 +10,7 @@
   "test": {
     "username": "null",
     "password": "null",
-    "database": "fantasyTeam",
+    "database": "DATABASE_URL",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
