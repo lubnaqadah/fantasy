@@ -160,7 +160,7 @@ function createNewPlayer(data){
 function getUserInfo(UserName){
 	console.log(UserName);
 	$.get("/api/team/" + UserName)
-	console.log(UserName);
+	
 	.then(function(data){
 		userTeam = data.teamMembers.split(",");
 		customTeam = userTeam;
