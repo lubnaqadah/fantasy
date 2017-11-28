@@ -161,7 +161,7 @@ function getUserInfo(UserName){
 	console.log(UserName);
 	$.get("/api/team/" + UserName)
 	
-	.then(function(data){
+	.done(function(data){
 		console.log(UserName, data);
 		userTeam = data.teamMembers.split(",");
 		customTeam = userTeam;
