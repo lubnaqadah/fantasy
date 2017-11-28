@@ -1,19 +1,44 @@
 // Set up MySQL connection.
-var mysql = require("mysql");
+//var mysql = require("mysql");
 
 
-var connection;
+//var connection;
 
-if(process.env.JAWSDB_URL){
+//if(process.env.JAWSDB_URL){
 	connection = mysql.createConnection(process.env.JAWSDB_URL);	
-}else{
-	connection = mysql.createConnection({
-  port: 3306,
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "fantasyteam"
-});
-}
+//}else{
+//	connection = mysql.createConnection({
+//  port: 3306,
+//  host: "localhost",
+//  user: "root",
+//  password: "",
+ // database: "fantasyteam"
+//});
+//}
 
-module.exports = connection;
+//module.exports = connection;
+
+
+{
+  "development": {
+    "username": "null",
+    "password": "null",
+    "database": "fantasyTeam",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "null",
+    "password": "null",
+    "database": "fantasyTeam",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "null",
+    "password": "null",
+    "database": "DATABASE_URL",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
