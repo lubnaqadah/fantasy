@@ -33,8 +33,7 @@ $.get("/api/players", function(data){
 
 function dashboard(){
 	setTimeout(function(){
-		UserName = localStorage.getItem('UserName').trim();
-		console.log(UserName.trim());
+		UserName = localStorage.getItem('UserName');
 		getUserInfo(UserName);
 	}, 800);
 
@@ -159,10 +158,10 @@ function createNewPlayer(data){
 
 
 function getUserInfo(UserName){
-
+	console.log(UserName);
 	$.get("/api/team/" + UserName)
-
-		.then(function(data){
+	console.log(UserName);
+	.then(function(data){
 		userTeam = data.teamMembers.split(",");
 		customTeam = userTeam;
 		score = data.score;
