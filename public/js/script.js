@@ -10,13 +10,18 @@ $(".signup").on("click", function(){
 })
 
 $(".btnLogin").on("click", function(){
-	UserName = $(".name").val();
-	localStorage.setItem('UserName', UserName);
+	if ($(".name").val() == "" || $(".password").val() == ""){
+
+	}else{
+		UserName = $(".name").val();
+		localStorage.setItem('UserName', UserName);
+	}
 })
 
 
 $(".btnsignup").on("click", function(){
-	UserName = $(".name").val();
+	UserName = $(".signUpName").val();
+	alert(UserName);
 	localStorage.setItem('UserName', UserName);
 	window.location.href= "/dashboard.html"
 })
@@ -32,6 +37,9 @@ $.get("/api/players", function(data){
 
 
 function dashboard(){
+	$(document).ready(function(){
+		$('[data-toggle="popover"]').popover({html:true}); 
+	});
 	setTimeout(function(){
 		UserName = localStorage.getItem('UserName');
 		getUserInfo(UserName);
@@ -90,9 +98,6 @@ $(".save").on("click", function(){
 	console.log("hello");
 	console.log(score, playersValue, newScore);
 
-	if (customTeam.length == 7){
-
-
 		$.ajax({
 			method: "PUT",
 			url: "/api/users",
@@ -106,30 +111,40 @@ $(".save").on("click", function(){
 			window.location.reload();
 		});
 
-
-	}else{
-		alert("Your team is not complete you need 7 players.")
-	}
-
 });
 
 
+//$(".play").on("click", function(){
+//
+//	if (customTeam.length != 7){
+//		alert("Your team is not complete you need 7 players.")
+//
+//	}else if(userTeam != customTeam){
+//		alert("Your need to save your changes.")
+//	}else{
+//
+//
+//		window.location = "/game.html";
+//	}
+//
+//});
+
+$(".play").popover();
 $(".play").on("click", function(){
 
 	if (customTeam.length != 7){
-		alert("Your team is not complete you need 7 players.")
+		// alert("Your team is not complete you need 7 players.")
+		$('.play').popover('toggle');
+	} else if (customTeam.length == 7){
+		$('.play').popover('hide');
 
+		window.location = "/game.html";
 	}else if(userTeam != customTeam){
 		alert("Your need to save your changes.")
 	}else{
-
-
 		window.location = "/game.html";
 	}
-
 });
-
-
 
 function createNewPlayer(data){
 	player = $("<div class='player card text-center'>");
@@ -144,7 +159,7 @@ function createNewPlayer(data){
 	playerName.text(data.name);
 	playerClub.text(data.club);
 	playerPossition.text(data.position);
-	playerValue.text("Value: " + data.value);
+	playerValue.text("Points: " + data.value);
 	player.append(playerName);
 	player.append(playerPic);
 	player.append(playerClub);
@@ -160,8 +175,8 @@ function createNewPlayer(data){
 function getUserInfo(UserName){
 	console.log(UserName);
 	$.get("/api/team/" + UserName)
-	
-	.done(function(data){
+
+		.done(function(data){
 		console.log(UserName, data);
 		userTeam = data.teamMembers.split(",");
 		customTeam = userTeam;

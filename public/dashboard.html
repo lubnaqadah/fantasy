@@ -4,6 +4,8 @@
 		<title>Fantasy Team</title>
 		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body class="dashboard" onload="dashboard()">
 		<div class="container">
@@ -28,12 +30,11 @@
 					<div class="team col-sm-3"><h6></h6></div>
 
 					<div class="players col-sm-9">
-						<h6>Available Players</h6>
+						<h6> Redeem your points to recruit better players.</h6>
 					</div>
 
 					<button class="save">Save Changes</button>
-
-					<button class="play">Play</button>
+					<button type="button" class="play btn btn-default" data-container="body" data-trigger="manual" data-toggle="popover" data-placement="top" data-content="You need 7 playerrs, and save your changes.">Go To Match</button>
 
 
 				</div>
@@ -47,8 +48,13 @@
 
 		</div> <!-- /container -->
 
-		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
 		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 		<script type="application/javascript" src="js/script.js"></script>
 	</body>
 </html>

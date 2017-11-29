@@ -14,11 +14,6 @@ body {
 	padding-left: 1rem;
 }
 
-/* Custom page header */
-.header {
-	margin-bottom: 1.5rem;
-	border-bottom: .05rem solid #e5e5e5;
-}
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -77,6 +72,9 @@ ul li{
 	background-size: cover;
 	color: #eaf205!important;
 }
+.header{
+	margin-bottom: 2rem;
+}
 .signIn {
 	color: #333;
 	text-shadow: none; /* Prevent inheritance from `body` */
@@ -89,7 +87,7 @@ ul li{
 	width: 30%;
 	height: 180px;
 	float: left;
-	margin: 5px;
+	margin: 10px;
 
 }
 
